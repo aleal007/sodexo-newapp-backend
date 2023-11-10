@@ -1,0 +1,186 @@
+---
+openapi: 3.0.1
+info:
+  title: OpenAPI definition
+  version: v0
+servers:
+- url: http://localhost:8080
+  description: Generated server url
+paths:
+  "/api/v1/news":
+    post:
+      tags:
+      - new-controller
+      operationId: save
+      requestBody:
+        content:
+          application/json:
+            schema:
+              "$ref": "#/components/schemas/New"
+        required: true
+      responses:
+        '200':
+          description: OK
+          content:
+            "*/*":
+              schema:
+                "$ref": "#/components/schemas/NewResponseRest"
+  "/api/v1/news/page/{page}":
+    get:
+      tags:
+      - new-controller
+      operationId: getNews
+      parameters:
+      - name: page
+        in: path
+        required: true
+        schema:
+          type: integer
+          format: int32
+      responses:
+        '200':
+          description: OK
+          content:
+            "*/*":
+              schema:
+                "$ref": "#/components/schemas/PageNew"
+  "/api/v1/news/filter/{title}/page/{page}":
+    get:
+      tags:
+      - new-controller
+      operationId: searchNews
+      parameters:
+      - name: title
+        in: path
+        required: true
+        schema:
+          type: string
+      - name: page
+        in: path
+        required: true
+        schema:
+          type: integer
+          format: int32
+      responses:
+        '200':
+          description: OK
+          content:
+            "*/*":
+              schema:
+                "$ref": "#/components/schemas/PageNew"
+  "/api/v1/news/{id}":
+    delete:
+      tags:
+      - new-controller
+      operationId: delete
+      parameters:
+      - name: id
+        in: path
+        required: true
+        schema:
+          type: integer
+          format: int64
+      responses:
+        '200':
+          description: OK
+          content:
+            "*/*":
+              schema:
+                "$ref": "#/components/schemas/NewResponseRest"
+components:
+  schemas:
+    New:
+      type: object
+      properties:
+        id:
+          type: integer
+          format: int64
+        title:
+          type: string
+        summary:
+          type: string
+        publishedAt:
+          type: string
+        newsSite:
+          type: string
+        imageUrl:
+          type: string
+        savedAt:
+          type: string
+    NewResponse:
+      type: object
+      properties:
+        news:
+          type: array
+          items:
+            "$ref": "#/components/schemas/New"
+    NewResponseRest:
+      type: object
+      properties:
+        metadata:
+          type: array
+          items:
+            type: object
+            additionalProperties:
+              type: string
+        newResponse:
+          "$ref": "#/components/schemas/NewResponse"
+    PageNew:
+      type: object
+      properties:
+        totalPages:
+          type: integer
+          format: int32
+        totalElements:
+          type: integer
+          format: int64
+        size:
+          type: integer
+          format: int32
+        content:
+          type: array
+          items:
+            "$ref": "#/components/schemas/New"
+        number:
+          type: integer
+          format: int32
+        sort:
+          "$ref": "#/components/schemas/SortObject"
+        pageable:
+          "$ref": "#/components/schemas/PageableObject"
+        numberOfElements:
+          type: integer
+          format: int32
+        first:
+          type: boolean
+        last:
+          type: boolean
+        empty:
+          type: boolean
+    PageableObject:
+      type: object
+      properties:
+        offset:
+          type: integer
+          format: int64
+        sort:
+          "$ref": "#/components/schemas/SortObject"
+        pageNumber:
+          type: integer
+          format: int32
+        pageSize:
+          type: integer
+          format: int32
+        paged:
+          type: boolean
+        unpaged:
+          type: boolean
+    SortObject:
+      type: object
+      properties:
+        empty:
+          type: boolean
+        unsorted:
+          type: boolean
+        sorted:
+          type: boolean
