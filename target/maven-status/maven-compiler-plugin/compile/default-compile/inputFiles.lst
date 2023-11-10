@@ -1,0 +1,9 @@
+/Users/alfredoleal/Desktop/Desarrollo/workspace-spring-boot/news-ms/src/main/java/cl/sodexo/backend/news/NewsMsApplication.java
+/Users/alfredoleal/Desktop/Desarrollo/workspace-spring-boot/news-ms/src/main/java/cl/sodexo/backend/news/model/NewResponse.java
+/Users/alfredoleal/Desktop/Desarrollo/workspace-spring-boot/news-ms/src/main/java/cl/sodexo/backend/news/service/NewServiceImpl.java
+/Users/alfredoleal/Desktop/Desarrollo/workspace-spring-boot/news-ms/src/main/java/cl/sodexo/backend/news/model/New.java
+/Users/alfredoleal/Desktop/Desarrollo/workspace-spring-boot/news-ms/src/main/java/cl/sodexo/backend/news/controller/NewController.java
+/Users/alfredoleal/Desktop/Desarrollo/workspace-spring-boot/news-ms/src/main/java/cl/sodexo/backend/news/dao/INewDao.java
+/Users/alfredoleal/Desktop/Desarrollo/workspace-spring-boot/news-ms/src/main/java/cl/sodexo/backend/news/model/NewResponseRest.java
+/Users/alfredoleal/Desktop/Desarrollo/workspace-spring-boot/news-ms/src/main/java/cl/sodexo/backend/news/response/ResponseRest.java
+/Users/alfredoleal/Desktop/Desarrollo/workspace-spring-boot/news-ms/src/main/java/cl/sodexo/backend/news/service/INewService.java

@@ -1,0 +1,9 @@
+cl/sodexo/backend/news/model/NewResponse.class
+cl/sodexo/backend/news/response/ResponseRest.class
+cl/sodexo/backend/news/NewsMsApplication.class
+cl/sodexo/backend/news/service/NewServiceImpl.class
+cl/sodexo/backend/news/model/NewResponseRest.class
+cl/sodexo/backend/news/model/New.class
+cl/sodexo/backend/news/dao/INewDao.class
+cl/sodexo/backend/news/controller/NewController.class
+cl/sodexo/backend/news/service/INewService.class
